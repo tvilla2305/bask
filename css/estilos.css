@@ -1,0 +1,243 @@
+
+:root {
+    --rojo: #CE1141;
+    --rojo-oscuro: #9E0B31;
+    --negro: #0E0E0E;
+    --carbon: #1B1B1B;
+    --blanco: #FFFFFF;
+    --gris: #8A8A8A;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+    color: var(--negro);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 16px;
+    background-color: var(--negro);
+    background-image:
+        radial-gradient(circle at 50% 50%, transparent 0 140px, rgba(255,255,255,.06) 141px 143px, transparent 144px),
+        linear-gradient(90deg, transparent calc(50% - 1px), rgba(255,255,255,.06) calc(50% - 1px) calc(50% + 1px), transparent calc(50% + 1px)),
+        radial-gradient(ellipse at 0% 50%, transparent 0 38%, rgba(255,255,255,.05) 38.2% 38.6%, transparent 38.8%),
+        radial-gradient(ellipse at 100% 50%, transparent 0 38%, rgba(255,255,255,.05) 38.2% 38.6%, transparent 38.8%);
+}
+
+.contenedor-global {
+    display: flex;
+    width: 100%;
+    max-width: 980px;
+    min-height: 580px;
+    background: var(--blanco);
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 30px 80px rgba(206,17,65,.25), 0 0 0 1px rgba(255,255,255,.08);
+}
+
+.contenedor-global section {
+    width: 50%;
+}
+
+.panel-derecha {
+    padding: 48px 44px;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.panel-derecha::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 6px;
+    background: linear-gradient(90deg, var(--rojo) 0 70%, var(--negro) 70% 85%, var(--rojo) 85%);
+}
+
+.formulario {
+    width: 100%;
+}
+
+.marca {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 6px;
+}
+
+.marca img {
+    width: 44px;
+    height: 44px;
+}
+
+.formulario h1 {
+    font-family: 'Bebas Neue', 'Impact', sans-serif;
+    color: var(--negro);
+    font-size: 3rem;
+    letter-spacing: 2px;
+    line-height: 1;
+    font-weight: 400;
+}
+
+.formulario h1 span {
+    color: var(--rojo);
+}
+
+.subtitulo {
+    font-family: 'Bebas Neue', 'Impact', sans-serif;
+    font-size: 1.15rem;
+    letter-spacing: 3px;
+    color: var(--gris);
+    margin-bottom: 26px;
+}
+
+.formulario form {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.formulario form label {
+    font-size: .72rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--carbon);
+    margin-top: 8px;
+}
+
+.formulario form input,
+.formulario form select {
+    width: 100%;
+    padding: 12px 14px;
+    border: 2px solid #E2E2E2;
+    border-radius: 2px;
+    font-size: .95rem;
+    font-family: inherit;
+    background: #FAFAFA;
+    transition: border-color .2s, background-color .2s;
+    outline: none;
+}
+
+.formulario form input:focus,
+.formulario form select:focus {
+    border-color: var(--rojo);
+    background: var(--blanco);
+}
+
+.formulario form p {
+    font-size: .88rem;
+    color: var(--gris);
+    margin-top: 14px;
+}
+
+.formulario form a {
+    color: var(--rojo);
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.formulario form a:hover,
+.formulario form a:focus-visible {
+    text-decoration: underline;
+}
+
+.botones {
+    display: flex;
+    margin-top: 18px;
+}
+
+.botones input[type="submit"] {
+    width: 100%;
+    padding: 15px;
+    background-color: var(--rojo);
+    color: var(--blanco);
+    border: none;
+    border-radius: 2px;
+    font-family: 'Bebas Neue', 'Impact', sans-serif;
+    font-size: 1.4rem;
+    letter-spacing: 3px;
+    cursor: pointer;
+    transition: background-color .2s, transform .15s;
+}
+
+.botones input[type="submit"]:hover {
+    background-color: var(--negro);
+    transform: translateY(-2px);
+}
+
+.botones input[type="submit"]:active {
+    background-color: var(--rojo-oscuro);
+    transform: translateY(0);
+}
+
+.botones input[type="submit"]:focus-visible {
+    outline: 3px solid var(--negro);
+    outline-offset: 3px;
+}
+
+.panel-izquierda {
+    min-width: 0;
+    background-color: var(--carbon);
+    background-image:
+        linear-gradient(160deg, rgba(14,14,14,.15) 30%, rgba(206,17,65,.85) 100%),
+        url("../img/leBron-James-Los-Angeles-Lakers-Staples-Center-2019.webp.webp");
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+}
+
+.fila {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.fila > div {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.panel-izquierda.azul {
+    background-image:
+        linear-gradient(160deg, rgba(14,14,14,.15) 30%, rgba(206,17,65,.85) 100%),
+        url("../img/8faafbe6-usatsi_2120524.jpg");
+    background-position: center 45%;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+@media (max-width: 760px) {
+    body {
+        padding: 20px 12px;
+    }
+
+    .contenedor-global {
+        flex-direction: column-reverse;
+    }
+
+    .contenedor-global section {
+        width: 100%;
+    }
+
+    .panel-izquierda {
+        min-height: 220px;
+    }
+
+    .panel-derecha {
+        padding: 36px 24px;
+    }
+
+    .fila {
+        grid-template-columns: 1fr;
+    }
+}
